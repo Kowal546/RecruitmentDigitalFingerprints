@@ -1,10 +1,10 @@
-def hash_snowflake(snowflake):
+def hash_snowflake(snowflake: list) -> tuple:
     min_index = min(range(len(snowflake)), key=lambda i: snowflake[i:] + snowflake[:i])
     normalized_snowflake = snowflake[min_index:] + snowflake[:min_index]
     return tuple(normalized_snowflake)
 
 
-def find_identical_snowflakes(input_vectors):
+def find_identical_snowflakes(input_vectors: list) -> dict:
     snowflake_dict = {}
 
     for i, snowflake in enumerate(input_vectors):
